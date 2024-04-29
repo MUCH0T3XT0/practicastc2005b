@@ -1,9 +1,190 @@
-<!DOCTYPE html>
-<html>
+
+//fs es el módulo que contiene las funciones para 
+//manipular el sistema de archivos
+const filesystem = require('fs');
+
+//1. Una función que reciba un arreglo de números y devuelva su promedio.
+function getaverage(arreglo) {
+    if (arreglo.length === 0) {
+        return 0;
+    }
+    const sum = arreglo.reduce((acumulador, numero) => acumulador + numero, 0);
+    const result = sum / arreglo.length;
+    return result;
+}
+const arreglo = [5, 10, 15, 20];
+const promedio = getaverage(arreglo);
+console.log("El promedio es:", promedio);
+
+//2. Una función que reciba un string y escriba el string en un archivo de texto.
+function escribirEnArchivo(texto) {
+    filesystem.writeFileSync('archivo.txt', texto);
+    console.log("Se escribio correctamente en el archivo");
+}
+const texto = "Hola, mundo!";
+escribirEnArchivo(texto);
+
+
+//Escoge algún problema que hayas implementado en otro lenguaje de programación, y dale una solución en js que se ejecute sobre node.
+//3. Implementacion de validacion de entradas de automatas(Racket como lenguaje original)
+
+
+// (search char char list) → char
+// Devuelve el siguiente estado dado el estado actual y el símbolo de transición
+function search(state, sym, trans) {
+    if (trans.length === 0) {
+        return [];
+    } else if (trans[0][0] === state && trans[0][1] === sym) {
+        return trans[0][2];
+    } else {
+        return search(state, sym, trans.slice(1));
+    }
+}
+
+// (route list list list list) → boolean
+// Valida si la entrada del autómata es válida
+function route(trans, state, fnl, ent) {
+    if (ent.length === 0){
+        return fnl.includes(state);
+    }else {
+        return route(trans, search(state, ent[0], trans), fnl, ent.slice(1));
+    }
+}
+
+// (validate list list) → list
+// Devuelve los resultados de las entradas introducidas en forma de lista
+const respuesta3 = ["1", "2"];
+function validate(automata, ent) {
+    return "La entrada es ".concat(route(automata[0], automata[2], automata[4], ent))
+}
+
+// Ejemplo de uso
+const automata = [
+    // Definición de transiciones: (estado_actual, símbolo, estado_siguiente)
+    [['q0', 'a', 'q1'], ['q1', 'b', 'q2'], ['q2', 'a', 'q3'], ['q3', 'a', 'q2']],
+    //Alfabeto
+    ['a', 'b'],
+    // Estado inicial
+    'q0',
+    // Posibles estados
+    ['q0', 'q1', 'q2', 'q3'],
+    // Estado final
+    ['q3']
+];
+
+const entrada = ['a', 'b', 'a', 'a'];
+    
+console.log(validate(automata, entrada)); // Salida: [ true ]
+
+const http = require('http');
+
+const server = http.createServer( (request, response) => {
+    response.setHeader('Content-Type', 'text/html');
+    response.write(`
+    <!DOCTYPE html>
+    <html lang="es">
     <head>
+        <meta charset="utf-8">
         <title>Primer laboratorio</title>
-        <link rel="stylesheet" href="estilos.css">
-        <hr/>
+            <style>
+            /* Estilos para el cuerpo del documento */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 150px;
+                background-color:#df572e;
+                align-items: center;
+            }
+            
+            /* Estilos para los títulos */
+            h1, h2 {
+                font-size: 95%;
+                color: #ffffff;
+                text-align: center;
+                border: 2px solid #3ce0cd; /* Borde sólido de 2px de grosor */
+                background-color: #333;
+                padding: 10px; /* Espacio interno alrededor del texto */
+                border-radius: 10px; /* Borde redondeado */
+                display: inline-block; /* Para que el borde se ajuste al contenido */
+            }
+            h3 {
+                font-size: 95%;
+                color: #07a00f;
+                text-align: center;
+                border: 2px solid #ffff; /* Borde sólido de 2px de grosor */
+                background-color: #333;
+                padding: 10px; /* Espacio interno alrededor del texto */
+                border-radius: 10px; /* Borde redondeado */
+                display: inline-block; /* Para que el borde se ajuste al contenido */
+            }
+            /* Estilos para los párrafos */
+            p {
+                line-height: 1.6;
+                font-size: 95%;
+                color: #333;
+                text-align: center;
+                border: 2px solid #ffff;
+                background-color: #ffff;
+                padding: 10px;
+                display: inline-block;
+                
+            }
+            p.encabezado {
+                font-size: 95%;
+                color: #ff8000;
+                text-align: center;
+                border: 2px solid #ffff;
+                background-color: #333;
+                padding: 10px;
+                border-radius: 10px; /* Borde redondeado */
+                display: inline-block;
+            }
+            p.divisor {
+                font-size: 95%;
+                color: #07a00f;
+                text-align: center;
+                border: 2px solid #ffff;
+                background-color: #333;
+                padding: 10px;
+                border-radius: 10px; /* Borde redondeado */
+                display: inline-block;
+            }
+            
+            /* Estilos para las imágenes */
+            img {
+                display: block;
+                margin: 0 auto;
+                
+            }
+            
+            /* Estilos para las listas ordenadas */
+            ol {
+                margin-left: 20px;
+                color: #ffff;
+            }
+            
+            /* Estilos para los elementos de lista */
+            li {
+                margin-bottom: 10px;
+                text-align: left;
+                margin-top: 20px;
+            }
+            
+            /* Estilos para los enlaces */
+            a {
+                color: blue;
+                text-decoration: none;
+            }
+            
+            a:hover {
+                text-decoration: underline;
+            }
+            
+            /* Estilos para las líneas horizontales */
+            hr {
+                border: 2px solid #ccc;
+                margin: 20px 0;
+            }
+        </style>
     </head>
     <body>
         <p class= "encabezado">A01276139 04/04/2024</p>
@@ -12,9 +193,6 @@
         <br>
             <p>Soy Jaime Trujillo Ruiz, tengo 20 años y actualmente estoy cursando el cuarto semestre de la carrera de ingenieria en tecnologias computacionales</p>
         </h1>
-        <img src="../img/selfie.jpg"
-        height="130"
-        width="150"/>
         <hr/>
         <h1>¿Cuales son mis intereses?
             <p>Disfruto pasando mi tiempo libre viendo peliculas, series, leyendo novelas y jugando videojuegos. Ultimamente estoy muy interesado en los temas de inteligencia artificial y machine learning</p>
@@ -146,3 +324,10 @@
         </h3>
     </body>
 </html>
+    `);
+    response.end();
+});
+server.listen(8080);
+
+
+
