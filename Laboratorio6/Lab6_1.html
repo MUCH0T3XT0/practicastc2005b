@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Contraseñas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Validar Contraseña</h2>
+        <form id="passwordForm">
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <input type="password" id="confirmPassword" placeholder="Confirmar Contraseña" required>
+            <button type="submit">Validar</button>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+    <script>
+    document.getElementById('passwordForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        validatePassword();
+    });
+
+    function validatePassword() {
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password.length < 8) {
+            showMessage('La contraseña debe tener al menos 8 caracteres.', 'error');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            showMessage('Las contraseñas no coinciden.', 'error');
+            return;
+        }
+
+        var hasUppercase = /[A-Z]/.test(password);
+        var hasLowercase = /[a-z]/.test(password);
+        var hasDigit = /\d/.test(password);
+        var hasSpecialChar = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
+
+        if (!(hasUppercase && hasLowercase && hasDigit && hasSpecialChar)) {
+            showMessage('La contraseña debe contener al menos una mayúscula, una minúscula, un número y un carácter especial.', 'error');
+            return;
+        }
+
+        showMessage('¡La contraseña es válida!', 'success');
+    }
+
+    function showMessage(message, type) {
+        var messageElement = document.getElementById('message');
+        messageElement.textContent = message;
+        messageElement.className = 'message ' + type;
+    }
+    </script>
+</body>
+</html>
