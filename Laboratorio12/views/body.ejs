@@ -1,8 +1,60 @@
-<p>Before the script...</p>
 
-
-<p>...After the script.</p>
-
-<footer>
-  <p>This is a footer</p>
-</footer>
+<div class="container">
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item bg-warning">
+          <h2 class="accordion-header">
+              Preguntas a responder
+          </h2>
+      </div>
+      <div class="accordion-item">
+          <h2 class="accordion-header">
+              <button class="accordion-button collapsed bg-warning-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                  ¿Qué otros templating engines existen para node?
+              </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                  <p>Excluyendo EJS, tambien existe el motor de plantillas PUG. Este motor utiliza una sintaxis basada en sangrias. Para instalar PUG se puede usar el comando npm install pug. Este motor tiene ventajas como:
+                    <ul>
+                        <li>Sintaxis Basada en Sangrías: La estructura del HTML se define mediante niveles de sangría en lugar de etiquetas de cierre explícitas.</li>
+                        <li>Legibilidad: La sintaxis limpia y concisa facilita la lectura y el mantenimiento de las plantillas.</li>
+                        <li>Potente: Soporta características avanzadas como herencia de plantillas, mixins, y bucles.</li>
+                        <li>Compatibilidad con HTML: Permite insertar código HTML directamente si es necesario.</li>
+                    </ul>
+                </p>
+                <p>Ademas de lo anterior tambien estan motores como Handlebars, Mustache, Twig y Smarty</p>
+              </div>
+          </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-dark-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseForth" aria-expanded="false" aria-controls="panelsStayOpen-collapseForth">
+                Rutas del laboratorio
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseForth" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <ul>
+                    <li>"/": Ruta de inicio del laboratorio12(preguntas a responder)</li>
+                    <li>"laboratorios/Laboratorio3": Ruta de inicio del laboratorio3(preguntas a responder)</li>
+                    <li>"laboratorios/Laboratorio6": Ruta de inicio del laboratorio6(preguntas a responder)</li>
+                    <li>"/test/test_ejs": Ruta para probar el pase de una variable a una vista</li>
+                    <li>"/formulario/form_method": Ruta de prueba de una metodo de forma</li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+      <div class="accordion-item">
+          <h2 class="accordion-header">
+              <button class="accordion-button collapsed bg-dark-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseForth" aria-expanded="false" aria-controls="panelsStayOpen-collapseForth">
+                  Referencias
+              </button>
+          </h2>
+          <div id="panelsStayOpen-collapseForth" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                  <p>https://medium.com/@romulo.gatto/working-with-template-engines-e-g-ejs-pug-in-express-js-3872e2109746</p>
+              </div>
+          </div>
+      </div>   
+  </div>
+</div>

@@ -17,6 +17,7 @@ app.use((request, response, next) => {
 app.get("/", (request, response, next) => {
     response.setHeader('Content-Type', 'text/plain');
     response.write("URL index/");
+    response.write("El archivo package.json es importante para los proyectos de Node.js y JavaScript que utilizan npm. Este archivo contiene informacion del proyecto incluyendo su configuración, dependencias, scripts y metadatos");
     response.end();
 });
 app.get("/laboratorio3", (request, response, next) => {

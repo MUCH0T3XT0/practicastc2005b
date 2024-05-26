@@ -12,12 +12,23 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (request, response, next) => {
-    response.setHeader('Content-Type', 'text/plain');
-    response.send("Hola Mundo");
-    response.end(); 
+    response.setHeader('Content-Type', 'text/html');
+    response.render('index');
+    response.end; 
 });
-app.get('/test_ejs', (request, response, next) => {
-    response.render('index'); 
+
+const rutasTest = require('./routes/test.routes');
+app.use('/test', rutasTest);
+
+const rutasFormulario = require('./routes/formulario.routes');
+app.use('/formulario', rutasFormulario);
+
+const rutasLaboratorio = require('./routes/laboratorio.routes');
+app.use('/laboratorios', rutasLaboratorio);
+
+app.use((request, response, next) => {
+    response.status(404);
+    response.send('¡Page Not Found!');
 });
 
 const server = http.createServer( (request, response) => {    
