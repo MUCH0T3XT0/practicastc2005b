@@ -6,12 +6,12 @@ const router = express.Router();
 
 router.get("/Laboratorio6", (request, response, next) => {
     response.setHeader('Content-Type', 'text/html');
-    response.render('./views/lab6');
+    response.render('./laboratorios/lab6');
     response.end();  
 });
 router.get("/Laboratorio3", (request, response, next) => {
     response.setHeader('Content-Type', 'text/html');
-    response.render('./iews/lab3');
+    response.render('./laboratorios/lab3');
     response.end();  
 });
 
