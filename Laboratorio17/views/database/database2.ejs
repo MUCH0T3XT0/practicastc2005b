@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <%- include('./../css.ejs') %>
+    </head>
+    <body>
+        <h2 class="title">¡Añadir un nuevo libro al registro!</h2>
+        <form action="/database/insert_books" method="POST">
+            <label class="label" for="titulo">Titulo</pm2 label>
+            <input class="input text" id="titulo" name="titulo">
+            <label class="label" for="serie">Serie</label>
+            <input class="input number" id="serie" name="serie">
+            <label class="label" for="autor">Autor</label>
+            <input class="input number"id="autor" name="autor">
+            <br><br>
+            <input class="button is-success" type="submit">
+        </form>
+    </body>
+</html>

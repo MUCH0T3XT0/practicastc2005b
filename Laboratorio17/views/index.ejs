@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio 17</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item bg-warning">
+          <h2 class="accordion-header">
+              Preguntas a responder
+          </h2>
+      </div>
+      <div class="accordion-item">
+          <h2 class="accordion-header">
+              <button class="accordion-button collapsed bg-warning-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                ¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?
+              </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p>Permite hacer pruebas unitarias y testeo. Proporciona portabilidad ya que es modular. Te permite añadirle seguridad extra al utilizar consultas preparadas</p>
+              </div>
+          </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-warning-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                ¿Qué es SQL injection y cómo se puede prevenir?
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <p>Es una vulnerabilidad de seguridad que permite acceder a datos no autorizados mediante inputs que modifiquen las consultas sql en la capa de modelos. Esto se puede hacer añadiendo palabras a caracteres caracteristicos de sql.</p>
+              <p>Para evitar esta vulnerabilidad se pueden usar consultas preparadas de forma que los datos proporcionados por el usuario no modifiquen la estructura de la consulta SQL. Otra forma es añadir validacion y comprobaciones de sintaxis en los inputs</p>
+            </div>
+        </div>
+    </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-dark-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseForth" aria-expanded="false" aria-controls="panelsStayOpen-collapseForth">
+                Rutas del laboratorio
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseForth" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <ul>
+                    <li>"/": Ruta de inicio del laboratorio13(preguntas a responder)</li>
+                    <li>"/laboratorios/Laboratorio3": Ruta de inicio del laboratorio3(preguntas a responder)</li>
+                    <li>"/laboratorios/Laboratorio6": Ruta de inicio del laboratorio6(preguntas a responder)</li>
+                    <li>"/usuarios/add-product": Ruta para probar el pase de una variable a una vista(De la asignacion en el calendario)</li>
+                    <li>"/usuarios/obtener_usuarios": Ruta de prueba de un metodo de forma (De la receta en github)</li>
+                    <li>"/cookies/test_cookie": Ruta que crea una sesión que es almacenada entre nuestro navegador y el servidor</li>
+                    <li>"/cookies/test_session": Ruta que añadirá un valor en forma de variable a nuestra sesión, el cual podremos acceder de manera inmediata</li>
+                    <li>"/cookies/test_session_variable": Ruta que permite acceder a esa nueva variable de la sesión</li>
+                    <li>"/cookies/logout": Ruta que destruira la sesión y vaciara la información que se encuentra almacenada hasta ese momento</li>
+                    <li>"/database/test_db": Ruta que permite hacer una prueba de conexion con la base de datos</li>
+                    <li>"/database/insert_books": Ruta que permite hacer una insercion en la base de datos</li>
+                    <li>"/database/update_books": Ruta que permite hacer una actualizacion en la insercion mas reciente de la base de datos</li>
+                
+                </ul>
+            </div>
+        </div>
+    </div> 
+      <div class="accordion-item">
+          <h2 class="accordion-header">
+              <button class="accordion-button collapsed bg-dark-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseForth" aria-expanded="false" aria-controls="panelsStayOpen-collapseForth">
+                  Referencias
+              </button>
+          </h2>
+          <div id="panelsStayOpen-collapseForth" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                  <p></p>
+              </div>
+          </div>
+      </div>   
+  </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>
